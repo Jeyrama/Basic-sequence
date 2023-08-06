@@ -24,9 +24,9 @@ Examples:
 // Solution
 
 function sumOfN(n) {
-  var array = [];
+  let array = [];
   array[0] = 0;
-  for (var i = 1; i < Math.abs(n)+1; i++) {
+  for (let i = 1; i < Math.abs(n)+1; i++) {
     if (n > 0) array[i] = array[i-1]+i;
     else array[i] = array[i-1]-i;
   }
@@ -34,3 +34,11 @@ function sumOfN(n) {
 };
 
 // or
+
+function sumOfN(n) {
+  for (let i = 0, list = []; i <= Math.abs(n); i++) {
+    list.push((list[i - 1] || 0) + i * (n < 0 ? -1 : 1))
+  }
+  
+  return list
+}
