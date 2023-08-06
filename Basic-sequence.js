@@ -32,3 +32,5 @@ function sumOfN(n) {
   }
   return array;
 };
+
+// or
